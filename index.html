@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <link rel="index.html" href="css try .css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Power Egypt - نظام ذكي لتوفير الطاقة</title>
+    <style>
+        body {
+             font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+         margin: 0;
+          padding: 0;
+           background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+         }
+        header { 
+            background: #2c3e50;
+             color: white; 
+             text-align: center;
+              padding: 20px; 
+            
+            }
+        .container { max-width: 1200px;
+             margin: 20px auto;
+             
+            padding: 20px;
+             background: white;
+              border-radius: 10px;
+               box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+             }
+        h1, h2 {
+             color: #2c3e50;
+             }
+        .features {
+             display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+               gap: 20px;
+                margin: 20px 0; 
+            }
+        .feature { background: #f8f9fa;
+             padding: 20px;
+              border-radius: 8px;
+               text-align: center;
+             }
+        .feature i {
+             font-size: 3em;
+             color: #3498db; 
+            }
+        form { 
+            background: #ecf0f1;
+             padding: 20px;
+              border-radius: 8px;
+               margin: 20px 0; 
+            }
+        label {
+             display: block;
+              margin: 10px 0 5px;
+               font-weight: bold;
+             }
+        input, select { 
+            width: 100%;
+             padding: 10px;
+              margin-bottom: 15px;
+               border: 1px solid #bdc3c7;
+                border-radius: 5px;
+                 box-sizing: border-box;
+                 }
+        button {
+             background: #27ae60;
+              color: white;
+               padding: 12px 30px;
+                border: none;
+                 border-radius: 5px;
+                  cursor: pointer;
+                   font-size: 16px;
+                 }
+        button:hover {
+             background: #219a52;
+             }
+        #results { 
+            margin-top: 20px;
+             padding: 15px;
+              background: #d5f4e6;
+               border-radius: 5px;
+                display: none; 
+            }
+        .alert { 
+            background: #f39c12;
+             color: white;
+              padding: 10px;
+               border-radius: 5px;
+                margin: 10px 0;
+             }
+        .peak-hours {
+             background: #e74c3c;
+              color: white;
+               padding: 15px;
+                border-radius: 5px;
+                 text-align: center;
+                  margin: 20px 0;
+                 }
+        .recommendations {
+             background: #3498db;
+             color: white;
+              padding: 15px;
+               border-radius: 5px;
+             }
+        table {
+             width: 100%; 
+             border-collapse: collapse; 
+             margin: 10px 0; 
+            }
+        th, td {
+             padding: 10px; 
+             text-align: right; 
+             border-bottom: 1px solid #ddd;
+             }
+        th { 
+            background: #34495e;
+             color: white;
+             }
+        @media (max-width: 768px) { .features { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🛡️ Smart Power Egypt</h1>
+        <p>نظام ذكي لمراقبة وتقليل استهلاك الكهرباء في مصر</p>
+    </header>
+    <div class="container">
+        <section>
+            <h2>المشكلة الرئيسية</h2>
+            <p>الضغط المتزايد على موارد الكهرباء في مصر بسبب الاستهلاك العالي والإمداد المحدود، مما يؤدي إلى انقطاعات متكررة وزيادة الفواتير.[web:1][web:2]</p>
+        </section>
+
+        <section class="features">
+            <div class="feature">
+                <i>⚡</i>
+                <h3>حاسبة الاستهلاك</h3>
+                <p>احسب استهلاكك بناءً على الأجهزة والوقت.</p>
+            </div>
+            <div class="feature">
+                <i>🔔</i>
+                <h3>تنبيهات ذكية</h3>
+                <p>إشعارات عند الاستهلاك العالي أو أوقات الذروة.</p>
+            </div>
+            <div class="feature">
+                <i>⭐</i>
+                <h3>كشف أوقات الذروة</h3>
+                <p>حدد فترات الطلب العالي وقلل الاستخدام.[web:2]</p>
+            </div>
+            <div class="feature">
+                <i>💡</i>
+                <h3>توصيات شخصية</h3>
+                <p>اقتراحات لتوفير الطاقة بناءً على سلوكك.</p>
+            </div>
+        </section>
+
+        <section class="peak-hours">
+            <h3>⚠️ أوقات الذروة في مصر</h3>
+            <p>عادةً من 12 ظهراً إلى 4 مساءً و 6 مساءً إلى 10 مساءً، خاصة في الصيف حيث يصل الطلب إلى 37,600 ميغاواط.[web:2]</p>
+        </section>
+
+        <section>
+            <h2>1. حاسبة استهلاك الكهرباء</h2>
+            <form id="calcForm">
+                <label>اختر الجهاز:</label>
+                <select id="appliance">
+                    <option value="0">اختر جهازاً</option>
+                    <option value="100">مصباح LED (7-10 واط)</option>
+                    <option value="150">الثلاجه (350-780 واط)</option>
+                    <option value="1500">تكييف (1000-4000 واط)</option>
+                    <option value="800">تليفزيون (20-200 واط)</option>
+                    <option value="1200">غسالة (500-1500 واط)</option>
+                    <option value="2000">مدفأة كهربائية (2000-5000 واط)</option>
+                    <option value="1000">مكنسة كهربائية (450-900 واط)</option>
+                     <option value="100"> الميكروويف (600-1200 واط)</option>
+                      <option value="100">مروحه LED (60-100 واط)</option>
+                    <!-- المزيد من daftlogic [web:3] -->
+                </select>
+                <label>ساعات الاستخدام يومياً:</label>
+                <input type="number" id="hours" min="0" max="24" value="1">
+                <label>عدد الأيام في الشهر:</label>
+                <input type="number" id="days" min="1" max="31" value="30">
+                <button type="submit">احسب الاستهلاك</button>
+            </form>
+            <div id="results">
+                <h3>النتائج:</h3>
+                <p>الاستهلاك اليومي: <span id="daily">0</span> كيلوواط ساعة</p>
+                <p>الاستهلاك الشهري: <span id="monthly">0</span> كيلوواط ساعة</p>
+                <p>تكلفة تقريبية (بناءً على الدرجات): <span id="cost">0</span> جنيه مصري</p>
+                <div id="alert" class="alert" style="display:none;">⚠️ استهلاك عالي! حاول تقليله.</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>توصيات للتوفير 💡</h2>
+            <div class="recommendations">
+                <ul>
+                    <li>استخدم مصابيح LED بدلاً من العادية لتوفير 80%.[web:3]</li>
+                    <li>أطفئ الأجهزة غير المستخدمة لتجنب الاستهلاك الخامل.</li>
+                    <li>شغل التكييف في درجة 24-26 مئوية.</li>
+                    <li>لا تغسل ملابس قليلة، اجمعها لدورة واحدة.[web:1]</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>تحليل الاستخدام 📊</h2>
+            <table id="usageTable">
+                <thead>
+                    <tr><th>الجهاز</th><th>واط</th><th>ساعات/يوم</th><th>كيلوواط ساعة/يوم</th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </div>
+
+    <script>
+        
+        const tariffs = [
+            {min: 0, max: 50, rate: 0.68},
+            {min: 51, max: 100, rate: 0.78},
+            {min: 101, max: 200, rate: 0.95},
+            {min: 201, max: 350, rate: 1.55},
+            {min: 351, max: 650, rate: 1.95},
+            {min: 651, max: 1000, rate: 2.1},
+            {min: 1001, max: Infinity, rate: 2.23}
+        ];
+
+        function calculateBill(kwh) {
+            let bill = 35; 
+            let remaining = kwh;
+            for (let tier of tariffs) {
+                let use = Math.min(remaining, tier.max - tier.min + 1);
+                if (use > 0) {
+                    bill += use * tier.rate;
+                    remaining -= use;
+                }
+                if (remaining <= 0) break;
+            }
+            return bill.toFixed(2);
+        }
+
+        document.getElementById('calcForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const watts = parseFloat(document.getElementById('appliance').value);
+            const hours = parseFloat(document.getElementById('hours').value);
+            const days = parseFloat(document.getElementById('days').value);
+            const daily = (watts / 1000 * hours).toFixed(2);
+            const monthly = (daily * days).toFixed(2);
+            const cost = calculateBill(parseFloat(monthly));
+            document.getElementById('daily').textContent = daily;
+            document.getElementById('monthly').textContent = monthly;
+            document.getElementById('cost').textContent = cost;
+            document.getElementById('results').style.display = 'block';
+            if (parseFloat(monthly) > 10) {
+                document.getElementById('alert').style.display = 'block';
+            } else {
+                document.getElementById('alert').style.display = 'none';
+            }
+        });
+
+     
+        window.onload = function() {
+        
+        };
+    </script>
+</body>
+</html>
